@@ -27,7 +27,7 @@ jobs:
           tar -xf doxygen-1.13.0.linux.bin.tar
           rm doxygen-1.13.0.linux.bin.tar
       - name: Get Graphviz
-        run: apt install graphviz -y
+        run: sudo apt install graphviz -y
       - name: Run Doxygen
         run: |
           cd docs/doxygen-awesome-css
