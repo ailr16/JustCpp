@@ -27,7 +27,7 @@ jobs:
           tar -xf doxygen-1.13.0.linux.bin.tar
           rm doxygen-1.13.0.linux.bin.tar
       - name: Run Doxygen
-        run: ../doxygen-1.13.0/bin/doxygen .doxyfile
+        run: ../doxygen-1.13.0/bin/doxygen docs/doxygen-awesome-css/Doxyfile
       - name: Upload artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
