@@ -17,6 +17,7 @@ jobs:
       - name: Uncompress Repo doxygen package
         run: |
           cd docs
+          unzip doxygen-awesome-css.zip
           ls
       - name: Get Doxygen
         run: |
