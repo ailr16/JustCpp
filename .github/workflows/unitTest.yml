@@ -1,0 +1,19 @@
+name: Unit Testing
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Uncompress Repo doxygen package
+        run: |
+          cd docs
+          unzip doxygen-awesome-css.zip
+          ls
