@@ -20,5 +20,5 @@ jobs:
           cmake --build .
       - name: Run tests
         run: |
-          cd exercises/test
+          cd build/exercises/test
           ctest -V
