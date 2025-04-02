@@ -12,8 +12,9 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Uncompress Repo doxygen package
+      - name: Build
         run: |
-          cd docs
-          unzip doxygen-awesome-css.zip
-          ls
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
