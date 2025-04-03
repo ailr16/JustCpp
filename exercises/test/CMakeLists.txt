@@ -21,14 +21,16 @@ enable_testing()
 
 ################
 # Define a test
-add_executable(firstTest TEST__oopExercises.cpp)
+add_executable(firstTest TEST__circle.cpp)
 
 target_link_libraries(firstTest
     PRIVATE
         GTest::GTest
         gmock
+        circle_library
 )
 
+target_include_directories(firstTest PRIVATE ../inc)
 
 ##################################
 # Just make the test runnable with
