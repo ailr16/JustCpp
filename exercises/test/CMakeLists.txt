@@ -4,9 +4,7 @@ project(ExercisesUnitTesting)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-##################################
 # Download and install GoogleTest
-
 include(FetchContent)
 FetchContent_Declare(googleTest
     GIT_REPOSITORY https://github.com/google/googletest.git
@@ -19,22 +17,18 @@ target_link_libraries(GTest::GTest INTERFACE gtest_main)
 
 enable_testing()
 
-################
-# Define a test
-add_executable(firstTest TEST__circle.cpp)
+# Tests definition
+add_executable(circle_test TEST__circle.cpp)
 
-target_link_libraries(firstTest
+target_link_libraries(circle_test
     PRIVATE
         GTest::GTest
         gmock
-        circle_library
+        circle_lib
 )
 
-target_include_directories(firstTest PRIVATE ../inc)
+target_include_directories(circle_test PRIVATE ../inc)
 
-##################################
-# Just make the test runnable with
-#   $ make test
-    
-add_test(NAME    test1
-         COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/firstTest)
+
+add_test(NAME    test
+         COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/circle_test)
