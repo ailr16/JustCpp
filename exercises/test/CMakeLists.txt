@@ -30,11 +30,23 @@ target_link_libraries(firstTest
         circle_library
 )
 
-target_include_directories(firstTest PRIVATE ../inc)
+target_include_directories(circle_test PRIVATE ../inc)
 
-##################################
-# Just make the test runnable with
-#   $ make test
-    
-add_test(NAME    test1
-         COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/firstTest)
+#Simple Calculator tests
+
+add_executable(simpleCalc_test TEST__simpleCalc.cpp)
+
+target_link_libraries(simpleCalc_test
+    PRIVATE
+        GTest::GTest
+        gmock
+        simpleCalc_lib
+)
+
+target_include_directories(simpleCalc_test PRIVATE ../inc)
+
+
+add_test(NAME    test
+         COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/circle_test
+                 ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/simpleCalc_test
+)
