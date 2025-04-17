@@ -18,32 +18,21 @@ target_link_libraries(GTest::GTest INTERFACE gtest_main)
 enable_testing()
 
 # Tests definition
-add_executable(circle_test TEST__circle.cpp)
+add_executable(unitTests
+    TEST__circle.cpp
+    TEST__simpleCalc.cpp
+)
 
-target_link_libraries(circle_test
+target_link_libraries(unitTests
     PRIVATE
         GTest::GTest
         gmock
         circle_lib
-)
-
-target_include_directories(circle_test PRIVATE ../inc)
-
-#Simple Calculator tests
-
-add_executable(simpleCalc_test TEST__simpleCalc.cpp)
-
-target_link_libraries(simpleCalc_test
-    PRIVATE
-        GTest::GTest
-        gmock
         simpleCalc_lib
 )
 
-target_include_directories(simpleCalc_test PRIVATE ../inc)
-
+target_include_directories(unitTests PRIVATE ../inc)
 
 add_test(NAME    test
-         COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/circle_test
-                 ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/simpleCalc_test
+         COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/unitTests
 )
