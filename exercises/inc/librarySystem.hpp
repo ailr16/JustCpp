@@ -30,9 +30,4 @@ namespace Library {
     };
 }
 
-namespace Utils {
-    void input(void);
-    void display(void);
-}
-
 #endif

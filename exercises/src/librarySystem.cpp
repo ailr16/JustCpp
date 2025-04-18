@@ -39,21 +39,18 @@ namespace Library {
     }
     
     int Library::removeBook(void){
-        return 0;
+        if(books.size() > 0){
+            books.pop_back();
+            return 0;
+        }
+        else{
+            std::cerr << "The books list is empty!" << std::endl;
+            return 1;
+        }
     }
     void Library::listAllBooks(void){
         for(const auto& book : books){
             std::cout << book << std::endl;
         }
-    }
-}
-
-namespace Utils {
-    void input(void){
-
-    }
-
-    void display(void){
-
     }
 }
