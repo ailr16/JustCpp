@@ -57,3 +57,17 @@ TEST( ClassSimpleCalcTest, MathOperationsSubstract ){
     ASSERT_EQ(MathOperations::substract(2147483647, -1), -2147483648);
     ASSERT_EQ(MathOperations::substract(-2147483648, 1), 2147483647);
 }
+
+TEST( ClassSimpleCalcTest, MathOperationsMultiply ){
+    ASSERT_EQ(MathOperations::multiply(2, 1), 2);
+    ASSERT_EQ(MathOperations::multiply(-2, 1), -2);
+    ASSERT_EQ(MathOperations::multiply(-2, -1), 2);
+    ASSERT_EQ(MathOperations::multiply(-2, -2), 4);
+}
+
+TEST( ClassSimpleCalcTest, MathOperationsDivide ){
+    ASSERT_EQ(MathOperations::divide(2, 1), 2);
+    ASSERT_EQ(MathOperations::divide(2, 2), 1);
+    ASSERT_EQ(MathOperations::divide(-2, 1), -2);
+    ASSERT_EQ(MathOperations::divide(-2, -1), 2);
+}
