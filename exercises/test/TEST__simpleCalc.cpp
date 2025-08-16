@@ -37,7 +37,7 @@ TEST( ClassSimpleCalcTest, DisplayPrintResult ){
     testing::internal::CaptureStderr();
     Display::printResult(4, 6);
     consoleOutput = testing::internal::GetCapturedStderr();
-    ASSERT_STREQ(consoleOutput.c_str(), "map::at\n");
+    ASSERT_STREQ(consoleOutput.c_str(), "map::at:  key not found\n");
 }
 
 TEST( ClassSimpleCalcTest, MathOperationsAdd ){
