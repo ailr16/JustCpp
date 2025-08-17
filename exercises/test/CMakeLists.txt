@@ -22,6 +22,7 @@ add_executable(unitTests
     TEST__circle.cpp
     TEST__simpleCalc.cpp
     TEST__librarySystem.cpp
+    TEST__stdViews.cpp
 )
 
 target_link_libraries(unitTests
@@ -31,6 +32,7 @@ target_link_libraries(unitTests
         circle_lib
         simpleCalc_lib
         librarySystem_lib
+        stdViews_lib
 )
 
 target_include_directories(unitTests PRIVATE ../inc)
