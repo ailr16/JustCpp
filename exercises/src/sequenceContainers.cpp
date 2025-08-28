@@ -67,11 +67,37 @@ void DequeExamples::example(void) {
 
 void ListExamples::example(void) {
     std::list<int> l = {1, 2, 3};
+    l.emplace(l.end(), 1);
+    l.emplace(l.end(), 2);
+    l.emplace(l.end(), 3);
+
+    std::cout << "Sizeof: " << sizeof(l) << std::endl;
+    std::cout << "Size: " << l.size() << std::endl;
+
+    for(auto it = l.begin(); it != l.end(); ++it)
+        std::cout << *it << " ";
+    std::cout << std::endl;
     
-    
+    l.insert(std::next(l.begin(), 2), {55, 56, 57});
+
+    for(auto it = l.begin(); it != l.end(); ++it)
+        std::cout << *it << " ";
+    std::cout << std::endl;
 }
 
 void FwListExamples::example(void) {
-    std::array<int, 4> a = {1, 2, 3, 4};
+    std::forward_list<int> fl;
+    fl.emplace_after(fl.before_begin(), 1);
+    fl.emplace_after(fl.before_begin(), 2);
+    fl.emplace_after(fl.begin(), 3);
+
+    std::cout << "Sizeof: " << sizeof(fl) << std::endl;
+    std::cout << "Size: Forward list doesn't have size() method!" << std::endl;
+    std::cout << "Size must be implemented in another way because is O(n): " << std::distance(fl.begin(), fl.end()) << std::endl; 
+
+    for(auto it = fl.begin(); it != fl.end(); ++it)
+        std::cout << *it << " ";
+    std::cout << std::endl;
+
     
 }
