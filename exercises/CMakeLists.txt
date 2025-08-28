@@ -5,5 +5,6 @@ add_library(simpleCalc_lib src/simpleCalc.cpp)
 add_library(librarySystem_lib src/librarySystem.cpp)
 add_library(stdViews_lib src/stdViews.cpp)
 add_library(sequenceContainers_lib src/sequenceContainers.cpp)
+add_library(associativeContainers_lib src/associativeContainers.cpp)
 
 add_subdirectory(test)
