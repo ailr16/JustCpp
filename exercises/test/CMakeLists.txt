@@ -23,6 +23,7 @@ add_executable(unitTests
     TEST__simpleCalc.cpp
     TEST__librarySystem.cpp
     TEST__stdViews.cpp
+    TEST__sequenceContainers.cpp
 )
 
 target_link_libraries(unitTests
@@ -33,6 +34,7 @@ target_link_libraries(unitTests
         simpleCalc_lib
         librarySystem_lib
         stdViews_lib
+        sequenceContainers_lib
 )
 
 target_include_directories(unitTests PRIVATE ../inc)
