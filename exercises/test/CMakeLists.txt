@@ -25,6 +25,7 @@ add_executable(unitTests
     TEST__stdViews.cpp
     TEST__sequenceContainers.cpp
     TEST__associativeContainers.cpp
+    TEST__specialContainers.cpp
 )
 
 target_link_libraries(unitTests
@@ -37,6 +38,7 @@ target_link_libraries(unitTests
         stdViews_lib
         sequenceContainers_lib
         associativeContainers_lib
+        specialContainers_lib
 )
 
 target_include_directories(unitTests PRIVATE ../inc)

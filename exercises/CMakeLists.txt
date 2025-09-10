@@ -6,5 +6,6 @@ add_library(librarySystem_lib src/librarySystem.cpp)
 add_library(stdViews_lib src/stdViews.cpp)
 add_library(sequenceContainers_lib src/sequenceContainers.cpp)
 add_library(associativeContainers_lib src/associativeContainers.cpp)
+add_library(specialContainers_lib src/specialContainers.cpp)
 
 add_subdirectory(test)

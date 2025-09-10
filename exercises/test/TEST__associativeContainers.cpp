@@ -14,5 +14,8 @@ TEST(AssociativeContainers, testUnorSet){
 }
 
 TEST(AssociativeContainers, testUnordMap){
-    UMapExamples::example();
+    EXPECT_THROW(
+        UMapExamples::example(),
+        std::exception
+    );
 }
