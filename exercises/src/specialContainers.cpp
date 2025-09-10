@@ -33,7 +33,35 @@ void TupleExamples::example(void){
     std::cout << "t2:" << a << "," << b << "," << c << std::endl;
 }
 
+std::optional<std::string> OptionalExamples::create(bool b){
+    if(b)
+        return "cppreference_Example";
+
+    return {};
+}
+
 void OptionalExamples::example(void){
+    std::optional<std::string> name;
+
+    std::cout << name.value_or("Unknown") << "\n";
+
+    if(!name){
+        name = "Angel";
+    }
+    std::cout << name.value_or("Unknown") << "\n";
+
+    auto returned = OptionalExamples::create(true);
+    if(returned.has_value())
+        std::cout << returned.value() << std::endl;
+
+    returned = OptionalExamples::create(false);
+    if(returned.has_value())
+        std::cout << returned.value() << std::endl;
+
+    returned.emplace("1");
+}
+
+void VariantExamples::example(void){
     std::variant<int, float, char> v1;
     v1 = 'c';
     if(auto access_variant = std::get_if<int>(&v1)){
@@ -48,13 +76,19 @@ void OptionalExamples::example(void){
     else;
 
     std::cout << "variant index: " << v1.index() << std::endl;
-    
-}
-
-void VariantExamples::example(void){
-    
 }
 
 void AnyExamples::example(void){
+    std::any a = 16.112;
+
+    if(a.has_value())
+        std::cout << a.type().name() << std::endl;
     
+    a.reset();
+    if(a.has_value())
+        std::cout << a.type().name() << std::endl;
+    
+    a.emplace<char>('c');
+    if(a.has_value())
+        std::cout << a.type().name() << std::endl;
 }

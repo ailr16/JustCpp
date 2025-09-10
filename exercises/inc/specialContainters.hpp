@@ -18,6 +18,7 @@ namespace TupleExamples {
 
 namespace OptionalExamples {
     void example(void);
+    std::optional<std::string> create(bool b);
 }
 
 namespace VariantExamples {
