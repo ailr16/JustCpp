@@ -26,6 +26,7 @@ add_executable(unitTests
     TEST__sequenceContainers.cpp
     TEST__associativeContainers.cpp
     TEST__specialContainers.cpp
+    TEST__oop.cpp
 )
 
 target_link_libraries(unitTests
@@ -39,6 +40,7 @@ target_link_libraries(unitTests
         sequenceContainers_lib
         associativeContainers_lib
         specialContainers_lib
+        oop_lib
 )
 
 target_include_directories(unitTests PRIVATE ../inc)

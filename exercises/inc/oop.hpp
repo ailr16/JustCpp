@@ -1,0 +1,54 @@
+#ifndef OOP_HPP
+#define OOP_HPP
+
+void friend_function(void);
+
+class AllAccessModifiers {
+    /* Can be accessed from anywhere in the program */
+    public:
+        int public1;
+        float public2;
+        void public_method1(void);
+    
+    /* Can be accessed only by the member functions or friend class/function*/
+    private:
+        int private1;
+        float private2;
+        void private_method1(void);
+
+    friend class AllAccessModifiers_friend;
+    friend void friend_function(void);
+
+    /* Similar to private, but can be accessed by any sub-class */
+    protected:
+        int protected1;
+        float protected2;
+        void protected_method1(void);
+
+};
+
+class AllAccessModifiers_friend {
+    public:
+        void public_method1(void);
+};
+
+class AllAccessModifiers_subclass : AllAccessModifiers {
+    public:
+        void public_method1(void);
+};
+
+class AllAccessModifiers_subclass_public : public AllAccessModifiers {
+    public:
+        void public_method1(void);
+};
+
+class AllAccessModifiers_subclass_protected : protected AllAccessModifiers {
+    public:
+        void public_method1(void);
+};
+
+namespace AccessModifiersExample {
+    void example(void);
+}
+
+#endif
