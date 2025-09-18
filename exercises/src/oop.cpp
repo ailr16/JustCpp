@@ -61,3 +61,18 @@ void AllAccessModifiers_subclass::public_method1(void) {
     (void)protected2;
     protected_method1();
 }
+
+int PolymorphismDerived1::publicMethod1(int a) {
+    return privateMethod1(a);
+}
+
+int PolymorphismDerived1::privateMethod1(int a) {
+    return a * 2;
+}
+
+int PolymorphismExample::example(int a) {
+    /* PolymorphismBase cannot be instantiated due it's an abstract class */
+    //PolymorphismBase class1;
+    PolymorphismDerived1 class2;
+    return class2.publicMethod1(a);
+}

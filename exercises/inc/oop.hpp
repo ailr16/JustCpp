@@ -51,4 +51,31 @@ namespace AccessModifiersExample {
     void example(void);
 }
 
+class PolymorphismBase {
+    public:
+        /* This pure virtual method makes an abstract class */
+        virtual int publicMethod1(int a) = 0;
+    
+    private:
+        virtual int privateMethod1(int a) = 0;
+};
+
+class PolymorphismDerived1 : public PolymorphismBase {
+    public:
+        int publicMethod1(int a) override;
+
+    private:
+        int privateMethod1(int a) override;
+};
+
+class PolymorphismDerived2 : public PolymorphismBase {
+    public:
+        /* There's no method to override due int vs float declaration */
+        //int publicMethod1(float a) override;
+};
+
+namespace PolymorphismExample {
+    int example(int a);
+}
+
 #endif
