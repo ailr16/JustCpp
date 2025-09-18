@@ -76,3 +76,13 @@ int PolymorphismExample::example(int a) {
     PolymorphismDerived1 class2;
     return class2.publicMethod1(a);
 }
+
+int AbstractionDerived::method(int a) {
+    return a*3;
+}
+
+int AbstractionExample::example(int a) {
+    AbstractionDerived class1;
+
+    return class1.method(a);
+}

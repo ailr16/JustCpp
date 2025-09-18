@@ -51,6 +51,7 @@ namespace AccessModifiersExample {
     void example(void);
 }
 
+
 class PolymorphismBase {
     public:
         /* This pure virtual method makes an abstract class */
@@ -75,6 +76,21 @@ class PolymorphismDerived2 : public PolymorphismBase {
 };
 
 namespace PolymorphismExample {
+    int example(int a);
+}
+
+class AbstractionInterface {
+    public:
+        virtual ~AbstractionInterface() { }
+        virtual int method(int a) = 0;
+};
+
+class AbstractionDerived : public AbstractionInterface {
+    public:
+        int method(int a) override;
+};
+
+namespace AbstractionExample {
     int example(int a);
 }
 
