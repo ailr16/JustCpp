@@ -1,6 +1,9 @@
 #ifndef OOP_HPP
 #define OOP_HPP
 
+#include <memory>
+#include <utility>
+
 void friend_function(void);
 
 class AllAccessModifiers {
@@ -92,6 +95,55 @@ class AbstractionDerived : public AbstractionInterface {
 
 namespace AbstractionExample {
     int example(int a);
+}
+
+class DefaultContructor {
+    private:
+        int private1;
+
+    public:
+        DefaultContructor(void) {
+            private1 = 0;
+        }
+
+        DefaultContructor(int a) : private1(a){ }
+
+        int testClass(void) {
+            return private1;
+        }
+};
+
+class MoveConstructor {
+    private:
+        int* private1;
+        
+    public:
+        MoveConstructor(int a);
+        MoveConstructor(MoveConstructor&& a);
+        ~MoveConstructor();
+
+        int getData(void);
+};
+
+class CopyConstructor {
+    private:
+        int private1;
+        
+    public:
+        CopyConstructor(int a);
+        CopyConstructor(const CopyConstructor& a);
+
+        int getData(void);
+};
+
+namespace ConstructorsExample {
+    enum ConstructorType : int {
+        c_default = 0,
+        c_move,
+        c_copy
+    };
+
+    std::pair<int, int> example(ConstructorType type, int value);
 }
 
 #endif

@@ -14,3 +14,31 @@ TEST(OOP, testAbstraction){
     int a = 1;
     ASSERT_EQ(AbstractionExample::example(a), a*3);
 }
+
+TEST(OOP, testConstructors){
+    std::pair<int, int> returnedValue;
+    int a = 1;
+
+    returnedValue = ConstructorsExample::example(
+                        ConstructorsExample::ConstructorType::c_default,
+                        a
+    );
+
+    ASSERT_EQ(returnedValue.first, a * 4);
+    ASSERT_EQ(returnedValue.second, 0);
+
+    returnedValue = ConstructorsExample::example(
+                        ConstructorsExample::ConstructorType::c_move,
+                        a
+    );
+    
+    ASSERT_EQ(returnedValue.first, a * 4);
+    ASSERT_EQ(returnedValue.second, 0);
+
+    returnedValue = ConstructorsExample::example(
+                        ConstructorsExample::ConstructorType::c_copy,
+                        a
+    );
+    
+    ASSERT_EQ(returnedValue.first, returnedValue.second);
+}

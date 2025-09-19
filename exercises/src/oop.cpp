@@ -86,3 +86,70 @@ int AbstractionExample::example(int a) {
 
     return class1.method(a);
 }
+
+MoveConstructor::MoveConstructor(int a) {
+    private1 = new int(a);
+}
+
+MoveConstructor::MoveConstructor(MoveConstructor&& a) {
+    private1 = a.private1;
+    a.private1 = nullptr;
+}
+
+MoveConstructor::~MoveConstructor() {
+    if(private1 != nullptr)
+        delete private1;
+}
+
+int MoveConstructor::getData() {
+    if(private1 == nullptr)
+        return 0;
+
+    return *private1;
+}
+
+CopyConstructor::CopyConstructor(int a) {
+    private1 = a;
+}
+
+CopyConstructor::CopyConstructor(const CopyConstructor& a) {
+    private1 = a.private1;
+}
+
+int CopyConstructor::getData(void) {
+    return private1;
+}
+
+std::pair<int, int> ConstructorsExample::example(ConstructorType type, int value) {
+    std::pair<int, int> result;
+    DefaultContructor class1(value);
+
+    MoveConstructor class2(value);
+    MoveConstructor class3 = std::move(class2);
+
+    CopyConstructor class4(value);
+    CopyConstructor class5(class4);
+
+    switch(type){
+        case ConstructorsExample::ConstructorType::c_default:
+            result.first = class1.testClass() * 4;
+            result.second = 0;
+            break;
+
+        case ConstructorsExample::ConstructorType::c_move:
+            result.first = class3.getData() * 4;
+            result.second = class2.getData();   // Must be zero
+            break;
+        
+        case ConstructorsExample::ConstructorType::c_copy:
+            result.first = class4.getData();
+            result.second = class5.getData();
+            break;
+
+        default:
+            result.first = 0;
+            result.second = 0;
+    }
+
+    return result;
+}
