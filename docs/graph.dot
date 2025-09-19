@@ -1,0 +1,68 @@
+graph happiness {
+	fontname="URW Chancery L, Apple Chancery, Comic Sans MS, cursive"
+	layout=twopi;
+	graph [ranksep=2.2];
+	graph [voro_margin=0.1];
+	edge [penwidth=2 color="#f0f0ff"]
+	node [fontname="Ubuntu, Calibri, cursive"]
+	node [style="filled" penwidth=0 fillcolor="#87878760" fontcolor="#FEFEFEFF"]
+	"C++" [fontsize=50 fontcolor="#3d466eFF"]
+	node [fontsize=26]
+	"C++" -- {
+		Language
+		OOP
+	}
+	node [fontsize=25]
+	Language -- {
+		STL
+		Lambdas
+		Threading
+	}
+	OOP -- {
+		Encapsulation
+		Inheritance
+		Polymorphism
+		Abstraction
+		"Constructors 
+		&
+		Destructors"
+		Friends
+		"Operator overload"
+		Templates
+		"Static Members"
+	}
+	node [fontsize="12"]
+	Encapsulation -- {
+		"Access Modifiers"
+	}
+	"Access Modifiers" -- {
+	    Public
+	    Private
+	    Protected
+	}
+	Inheritance -- {
+	    "Access Modifiers"
+	}
+	Polymorphism -- {
+		Override
+		Virtual
+	}
+	Abstraction -- {
+		"Abstract classes"
+		Interfaces
+	}
+	"Constructors & Destructors" -- {
+	    Default
+	    Move
+	    Copy
+	}
+	Friends -- {
+	    Class
+	    Function
+	}
+	STL -- {
+		Views
+		Containers
+	}
+	
+}
