@@ -51,3 +51,14 @@ TEST(OOP, testStaticMember){
     a = 44;
     ASSERT_EQ(StaticMembersExample::example(a), a*2);
 }
+
+TEST(OOP, testOperatorOverload){
+    OpOverload::Complex result;
+
+    result = OpOverload::example();
+
+    std::cout << result << std::endl;
+
+    ASSERT_EQ(result.real, 3);
+    ASSERT_EQ(result.imaginary, 3);
+}

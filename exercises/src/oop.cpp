@@ -169,3 +169,24 @@ int StaticMembersExample::example(int value) {
     obj1.changeValue(value);
     return obj1.getValue() + obj2.getValue();
 }
+
+OpOverload::Complex OpOverload::operator+(const Complex& a, const Complex& b) {
+    Complex result;
+
+    result.real = a.real + b.real;
+    result.imaginary = a.imaginary + b.imaginary;
+
+    return result;
+}
+
+OpOverload::Complex OpOverload::example(void) {
+    Complex a = {1, 1};
+    Complex b = {2, 2};
+
+    return a + b;
+}
+
+std::ostream& OpOverload::operator<< (std::ostream& stream, const Complex& a) {
+    stream << "(" << a.real << "," << a.imaginary << ")";
+    return stream;
+}

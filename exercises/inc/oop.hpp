@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <utility>
+#include <iostream>
 
 void friend_function(void);
 
@@ -159,4 +160,16 @@ class StaticMemberClass {
 namespace StaticMembersExample {
     int example(int value);
 }
+
+namespace OpOverload {
+    struct Complex {
+        double real;
+        double imaginary;
+    };
+
+    Complex example(void);
+    Complex operator+(const Complex& a, const Complex& b);
+    std::ostream& operator<< (std::ostream& stream, const Complex& a);
+}
+
 #endif
