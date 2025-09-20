@@ -28,6 +28,7 @@ add_executable(unitTests
     TEST__specialContainers.cpp
     TEST__oop.cpp
     TEST__lambdas.cpp
+    TEST__smartPointers.cpp
 )
 
 target_link_libraries(unitTests
@@ -43,6 +44,7 @@ target_link_libraries(unitTests
         specialContainers_lib
         oop_lib
         lambdas_lib
+        smartPointers_lib
 )
 
 target_include_directories(unitTests PRIVATE ../inc)

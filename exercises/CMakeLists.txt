@@ -9,5 +9,6 @@ add_library(associativeContainers_lib src/associativeContainers.cpp)
 add_library(specialContainers_lib src/specialContainers.cpp)
 add_library(oop_lib src/oop.cpp)
 add_library(lambdas_lib src/lambdas.cpp)
+add_library(smartPointers_lib src/smartPointers.cpp)
 
 add_subdirectory(test)
