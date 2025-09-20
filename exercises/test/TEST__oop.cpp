@@ -62,3 +62,7 @@ TEST(OOP, testOperatorOverload){
     ASSERT_EQ(result.real, 3);
     ASSERT_EQ(result.imaginary, 3);
 }
+
+TEST(OOP, testTemplates){
+    Templates::example();
+}

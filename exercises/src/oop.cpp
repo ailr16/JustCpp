@@ -190,3 +190,22 @@ std::ostream& OpOverload::operator<< (std::ostream& stream, const Complex& a) {
     stream << "(" << a.real << "," << a.imaginary << ")";
     return stream;
 }
+
+template<typename T> T Templates::myMax(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+void Templates::example(void) {
+    int i_max = myMax<int>(4, 16);
+    std::cout << "max is: " << i_max << std::endl;
+
+    float f_max = myMax<float>(4.5f, 1.1f);
+    std::cout << "max is: " << f_max << std::endl;
+
+    double d_max = myMax<double>(161.2, 161.2);
+    std::cout << "max is: " << d_max << std::endl;
+
+    std::cout << "variable template int: " << variable_template<int> << std::endl;
+    std::cout << "variable template float: " << variable_template<float> << std::endl;
+    std::cout << "variable template double: " << variable_template<double> << std::endl;
+}

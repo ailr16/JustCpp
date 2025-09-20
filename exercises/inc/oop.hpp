@@ -172,4 +172,10 @@ namespace OpOverload {
     std::ostream& operator<< (std::ostream& stream, const Complex& a);
 }
 
+namespace Templates {
+    template<typename T> T myMax(T a, T b);
+    template<typename T> T variable_template = T(16.161616);
+    void example(void);
+}
+
 #endif
