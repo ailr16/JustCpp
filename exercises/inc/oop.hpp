@@ -146,4 +146,17 @@ namespace ConstructorsExample {
     std::pair<int, int> example(ConstructorType type, int value);
 }
 
+
+class StaticMemberClass {
+    private:
+        static inline int integer = 16;
+
+    public:
+        int getValue(void);
+        void changeValue(int value);
+};
+
+namespace StaticMembersExample {
+    int example(int value);
+}
 #endif

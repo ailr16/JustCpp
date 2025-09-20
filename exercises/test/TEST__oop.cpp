@@ -42,3 +42,12 @@ TEST(OOP, testConstructors){
     
     ASSERT_EQ(returnedValue.first, returnedValue.second);
 }
+
+TEST(OOP, testStaticMember){
+    int a = 4;
+
+    ASSERT_EQ(StaticMembersExample::example(a), a*2);
+
+    a = 44;
+    ASSERT_EQ(StaticMembersExample::example(a), a*2);
+}

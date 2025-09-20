@@ -153,3 +153,19 @@ std::pair<int, int> ConstructorsExample::example(ConstructorType type, int value
 
     return result;
 }
+
+int StaticMemberClass::getValue(void) {
+    return integer;
+}
+
+void StaticMemberClass::changeValue(int value) {
+    integer = value;
+}
+
+int StaticMembersExample::example(int value) {
+    StaticMemberClass obj1;
+    StaticMemberClass obj2;
+
+    obj1.changeValue(value);
+    return obj1.getValue() + obj2.getValue();
+}
