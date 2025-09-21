@@ -8,3 +8,11 @@ TEST(SmartPointersTests, testAutoPtr){
 TEST(SmartPointersTests, testUniquePtr){
     SmartPointersExamples::uniquePtr();
 }
+
+TEST(SmartPointersTests, testSharedPtr){
+    SmartPointersExamples::sharedPtr();
+}
+
+TEST(SmartPointersTests, testWeakPtr){
+    SmartPointersExamples::weakPtr();
+}
