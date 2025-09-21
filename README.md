@@ -11,6 +11,8 @@ Here you can find examples of implementations with C++ like:
 - Documentation in code
 - Workflows (CMake and GitHub actions)
 
+![a](./docs/cpp.png)
+
 ## Index
 - Exercises
   - Namespaces:
