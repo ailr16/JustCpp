@@ -29,6 +29,7 @@ add_executable(unitTests
     TEST__oop.cpp
     TEST__lambdas.cpp
     TEST__smartPointers.cpp
+    TEST__customException.cpp
 )
 
 target_link_libraries(unitTests
@@ -45,6 +46,7 @@ target_link_libraries(unitTests
         oop_lib
         lambdas_lib
         smartPointers_lib
+        customException_lib
 )
 
 target_include_directories(unitTests PRIVATE ../inc)
